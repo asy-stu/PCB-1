@@ -20,12 +20,14 @@ export default function FAQ() {
               <button
                 className="w-full flex items-center justify-between gap-4 p-5 text-start"
                 onClick={() => setOpenIndex(isOpen ? null : i)}
+                aria-expanded={isOpen}
+                aria-controls={`faq-answer-${i}`}
               >
                 <span className="font-medium">{item.q}</span>
                 <ChevronDown className={`w-5 h-5 shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`} style={{ color: "var(--site-accent)" }} />
               </button>
               {isOpen && (
-                <div className="px-5 pb-5 text-sm leading-relaxed" style={{ color: "var(--site-text-muted)" }}>
+                <div id={`faq-answer-${i}`} className="px-5 pb-5 text-sm leading-relaxed" style={{ color: "var(--site-text-muted)" }}>
                   {item.a}
                 </div>
               )}
