@@ -12,11 +12,26 @@ import Testimonials from "../components/Testimonials";
 import FAQ from "../components/FAQ";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import Chatbot from "../components/Chatbot";
 import { recordVisit } from "../lib/statsStore";
 
 export default function Home() {
   useEffect(() => {
     recordVisit();
+
+    const handleAnchorClick = (event) => {
+      const anchor = event.target.closest('a[href^="#"]');
+      if (!anchor) return;
+      const href = anchor.getAttribute("href");
+      if (!href || href.startsWith("#/")) return;
+      const id = href.slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", window.location.pathname + window.location.search + "#/");
+    };
+    document.addEventListener("click", handleAnchorClick);
 
     const sections = document.querySelectorAll("main > section:not(#home), main > div");
     sections.forEach((section) => section.classList.add("scroll-reveal"));
@@ -29,7 +44,10 @@ export default function Home() {
       });
     }, { threshold: 0.1, rootMargin: "0px 0px -60px" });
     sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("click", handleAnchorClick);
+    };
   }, []);
 
   return (
@@ -49,6 +67,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 }
