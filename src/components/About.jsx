@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { GraduationCap, Download, BookOpen } from "lucide-react";
+import { GraduationCap, BookOpen } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 
 export default function About() {
@@ -15,10 +15,6 @@ export default function About() {
         <div className="fade-up">
           <p className="text-lg md:text-xl font-medium mb-5 site-accent">{t("about.headline")}</p>
           <p className="leading-relaxed mb-8" style={{ color: "var(--site-text-muted)" }}>{t("about.body")}</p>
-
-          <button className="btn-ghost inline-flex items-center gap-2 px-5 py-3 text-xs mb-10">
-            <Download className="w-4 h-4" /> {t("about.cv")}
-          </button>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {stats.map((s, i) => (
