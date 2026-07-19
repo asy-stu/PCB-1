@@ -1,20 +1,40 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Mail, Phone, MapPin, UploadCloud, Send, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 import { recordMessage } from "../lib/statsStore";
 
 export default function Contact() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const f = t("contact.form", { returnObjects: true }) || {};
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState("");
 
   const submit = (e) => {
     e.preventDefault();
+    const recipient = t("contact.emailValue");
+    if (!recipient || recipient.includes("example.com")) {
+      const messages = {
+        ar: "أضف بريدك الحقيقي من لوحة التحكم أولًا حتى يعمل الإرسال.",
+        en: "Add your real email in the dashboard first to enable sending.",
+        tr: "Gönderimi etkinleştirmek için önce panelden gerçek e-postanızı ekleyin.",
+      };
+      setStatus(messages[i18n.language] || messages.en);
+      return;
+    }
+    const data = new FormData(e.currentTarget);
+    const subject = `PCB project request — ${data.get("name") || "Website visitor"}`;
+    const body = [
+      `Name: ${data.get("name") || ""}`,
+      `Email: ${data.get("email") || ""}`,
+      `Phone: ${data.get("phone") || ""}`,
+      `Company: ${data.get("company") || ""}`,
+      `Project: ${data.get("type") || ""}`,
+      "",
+      data.get("details") || "",
+    ].join("\n");
     recordMessage();
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
-    e.target.reset();
+    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setStatus(i18n.language === "ar" ? "تم فتح تطبيق البريد لإكمال الإرسال." : i18n.language === "tr" ? "Gönderimi tamamlamak için e-posta uygulaması açıldı." : "Your email app was opened to complete sending.");
   };
 
   const inputCls = "w-full site-bg-elevated border site-border rounded-lg px-4 py-3 text-sm outline-none focus:border-[var(--site-accent)] transition-colors placeholder:text-[var(--site-text-muted)]";
@@ -40,7 +60,7 @@ export default function Contact() {
               <span className="w-12 h-12 rounded-xl border site-border flex items-center justify-center shrink-0 site-accent"><Phone className="w-5 h-5" /></span>
               <div>
                 <p className="text-xs font-mono mb-0.5" style={{ color: "var(--site-text-muted)" }}>{t("contact.phoneLabel")}</p>
-                <a className="font-bold ltr-only hover:site-accent transition-colors" href={`tel:${t("contact.phoneValue").replace(/\\s/g, "")}`}>{t("contact.phoneValue")}</a>
+                <a className="font-bold ltr-only hover:site-accent transition-colors" href={`tel:${t("contact.phoneValue").replace(/\s/g, "")}`}>{t("contact.phoneValue")}</a>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -57,27 +77,27 @@ export default function Contact() {
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
               <label className="block font-mono text-xs mb-2" style={{ color: "var(--site-text-muted)" }}>{f.name} *</label>
-              <input required className={inputCls} placeholder="John Doe" />
+              <input required name="name" autoComplete="name" className={inputCls} placeholder="John Doe" />
             </div>
             <div>
               <label className="block font-mono text-xs mb-2" style={{ color: "var(--site-text-muted)" }}>{f.email} *</label>
-              <input required type="email" className={inputCls} placeholder="john@example.com" />
+              <input required name="email" type="email" autoComplete="email" className={inputCls} placeholder="john@example.com" />
             </div>
           </div>
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
               <label className="block font-mono text-xs mb-2" style={{ color: "var(--site-text-muted)" }}>{f.phone}</label>
-              <input className={inputCls} placeholder="+1 234 567 890" />
+              <input name="phone" type="tel" autoComplete="tel" className={inputCls} placeholder="+1 234 567 890" />
             </div>
             <div>
               <label className="block font-mono text-xs mb-2" style={{ color: "var(--site-text-muted)" }}>{f.company}</label>
-              <input className={inputCls} placeholder="SmartTech Solutions" />
+              <input name="company" autoComplete="organization" className={inputCls} placeholder="SmartTech Solutions" />
             </div>
           </div>
           <div className="grid sm:grid-cols-3 gap-5">
             <div>
               <label className="block font-mono text-xs mb-2" style={{ color: "var(--site-text-muted)" }}>{f.type} *</label>
-              <select required className={inputCls}>
+              <select required name="type" className={inputCls}>
                 <option value="">{f.select}</option>
                 <option>Schematic Design</option>
                 <option>PCB Layout</option>
@@ -96,20 +116,12 @@ export default function Contact() {
           </div>
           <div>
             <label className="block font-mono text-xs mb-2" style={{ color: "var(--site-text-muted)" }}>{f.details} *</label>
-            <textarea required rows={4} className={inputCls} placeholder={f.detailsPh} />
-          </div>
-          <div>
-            <label className="block font-mono text-xs mb-2" style={{ color: "var(--site-text-muted)" }}>{f.attach}</label>
-            <div className="border border-dashed site-border rounded-xl p-8 text-center">
-              <UploadCloud className="w-6 h-6 mx-auto mb-3 site-accent" />
-              <p className="text-sm mb-1">{f.drop}</p>
-              <p className="text-xs" style={{ color: "var(--site-text-muted)" }}>{f.supports}</p>
-            </div>
+            <textarea required name="details" rows={4} className={inputCls} placeholder={f.detailsPh} />
           </div>
           <button type="submit" className="btn-primary w-full py-3.5 flex items-center justify-center gap-2 text-sm">
-            {sent ? <CheckCircle2 className="w-4 h-4" /> : <Send className="w-4 h-4" />}
-            {sent ? "✓" : f.send}
+            <Send className="w-4 h-4" /> {f.send}
           </button>
+          {status && <p role="status" className="text-xs text-center site-accent flex items-center justify-center gap-1.5"><CheckCircle2 className="w-4 h-4" />{status}</p>}
         </form>
       </div>
     </section>
