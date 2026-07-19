@@ -10,6 +10,8 @@ export default function Profiles() {
   const filters = t("profiles.filters", { returnObjects: true }) || [];
   const items = t("profiles.items", { returnObjects: true }) || [];
   const [active, setActive] = useState(0);
+  const groups = [items, items.slice(2, 5), items.slice(0, 2), items.slice(5)];
+  const visibleItems = groups[active] || items;
 
   return (
     <section id="profiles" className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32">
@@ -33,10 +35,12 @@ export default function Profiles() {
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {items.map((item, i) => {
+        {visibleItems.map((item, i) => {
           const Icon = ICONS[item.name] || ExternalLink;
+          const isGitHub = item.name.toLowerCase() === "github";
+          const href = isGitHub ? "https://github.com/asy-stu" : "#contact";
           return (
-            <div key={i} className="card p-6 flex flex-col fade-up">
+            <a key={`${active}-${i}`} href={href} target={isGitHub ? "_blank" : undefined} rel={isGitHub ? "noreferrer" : undefined} className="card p-6 flex flex-col fade-up focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--site-accent)]">
               <div className="flex items-center justify-between mb-5">
                 <span className="w-11 h-11 rounded-lg border site-border flex items-center justify-center site-accent">
                   <Icon className="w-5 h-5" />
@@ -50,7 +54,7 @@ export default function Profiles() {
               <span className="inline-flex items-center gap-1.5 text-xs font-mono site-accent">
                 {t("profiles.open")} <ArrowUpRight className="w-3 h-3" />
               </span>
-            </div>
+            </a>
           );
         })}
       </div>
