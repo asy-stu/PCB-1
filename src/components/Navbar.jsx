@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Cpu, Menu, X, Globe, ArrowUpRight } from "lucide-react";
+import { Cpu, Menu, X, Globe, ArrowUpRight, Sun, Moon } from "lucide-react";
 import { useSite } from "../context/SiteContext";
 
 const LINKS = [
@@ -22,7 +22,7 @@ const LANGS = [
 
 export default function Navbar() {
   const { t } = useTranslation();
-  const { lang, changeLanguage } = useSite();
+  const { lang, changeLanguage, colorMode, toggleColorMode } = useSite();
   const [open, setOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -70,6 +70,9 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
+          <button onClick={toggleColorMode} className="theme-toggle" aria-label={colorMode === "dark" ? "Light mode" : "Dark mode"} title={colorMode === "dark" ? "Light mode" : "Dark mode"}>
+            <span className="theme-toggle-icon">{colorMode === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}</span>
+          </button>
           <div className="relative">
             <button
               onClick={() => setLangOpen((v) => !v)}
@@ -110,6 +113,10 @@ export default function Navbar() {
               {t(`nav.${l.id}`)}
             </a>
           ))}
+          <button onClick={toggleColorMode} className="theme-toggle w-full mt-2 mb-2" aria-label="Toggle color mode">
+            <span className="theme-toggle-icon">{colorMode === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}</span>
+            <span className="font-mono text-xs">{colorMode === "dark" ? "Light mode" : "Dark mode"}</span>
+          </button>
           <div className="flex gap-2 pt-3">
             {LANGS.map((l) => (
               <button
