@@ -151,7 +151,7 @@
     "subtitle": "Güvenilir kartları birlikte inşa edelim",
     "desc": "Aklınızda özel bir PCB tasarımı, şematik diyagram veya donanım hata ayıklama sorunu mu var? Detaylı özelliklerinizi, hedef kısıtlamalarınızı veya taslaklarınızı gönderin, 24 saatten kısa sürede kapsamlı bir teknik teklifle size geri döneceğim.",
     "emailLabel": "E-POSTA KANALI", "phoneLabel": "WHATSAPP / MOBİL", "locationLabel": "KONUM SINIRLARI",
-    "emailValue": "ahmedsaad@example.com", "phoneValue": "+90 500 000 00 00",
+    "emailValue": "asy.ahmed@outlook.com", "phoneValue": "+90 500 000 00 00",
     "locationValue": "Uzaktan Tedarik / Dünya Çapında Nakliye için Uygun",
     "form": {
       "name": "Ad Soyad", "email": "E-posta Adresi", "phone": "Telefon Numarası", "company": "Şirket / Kurum",
