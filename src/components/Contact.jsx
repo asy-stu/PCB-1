@@ -33,14 +33,14 @@ export default function Contact() {
               <span className="w-12 h-12 rounded-xl border site-border flex items-center justify-center shrink-0 site-accent"><Mail className="w-5 h-5" /></span>
               <div>
                 <p className="text-xs font-mono mb-0.5" style={{ color: "var(--site-text-muted)" }}>{t("contact.emailLabel")}</p>
-                <p className="font-bold ltr-only">{t("contact.emailValue")}</p>
+                <a className="font-bold ltr-only hover:site-accent transition-colors" href={`mailto:${t("contact.emailValue")}`}>{t("contact.emailValue")}</a>
               </div>
             </div>
             <div className="flex items-center gap-4">
               <span className="w-12 h-12 rounded-xl border site-border flex items-center justify-center shrink-0 site-accent"><Phone className="w-5 h-5" /></span>
               <div>
                 <p className="text-xs font-mono mb-0.5" style={{ color: "var(--site-text-muted)" }}>{t("contact.phoneLabel")}</p>
-                <p className="font-bold ltr-only">{t("contact.phoneValue")}</p>
+                <a className="font-bold ltr-only hover:site-accent transition-colors" href={`tel:${t("contact.phoneValue").replace(/\\s/g, "")}`}>{t("contact.phoneValue")}</a>
               </div>
             </div>
             <div className="flex items-center gap-4">
