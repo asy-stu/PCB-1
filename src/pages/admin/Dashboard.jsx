@@ -78,6 +78,9 @@ export default function Dashboard() {
             </button>
           ))}
         </div>
+        <div className="mb-6 rounded-xl border site-border px-4 py-3 text-xs leading-relaxed" style={{ color: "var(--site-text-muted)", background: "color-mix(in srgb, var(--site-accent) 6%, transparent)" }}>
+          هذه لوحة محلية: التعديلات والإحصائيات تُحفظ على هذا المتصفح فقط ولا تغيّر الموقع العام أو تجمع بيانات زوار حقيقية.
+        </div>
         <h1 className="font-display font-bold text-2xl mb-8">{TABS.find((t) => t.id === tab)?.label}</h1>
         <ActiveComp />
       </main>
