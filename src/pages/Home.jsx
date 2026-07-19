@@ -17,13 +17,25 @@ import { recordVisit } from "../lib/statsStore";
 export default function Home() {
   useEffect(() => {
     recordVisit();
+
+    const sections = document.querySelectorAll("main > section:not(#home), main > div");
+    sections.forEach((section) => section.classList.add("scroll-reveal"));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -60px" });
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div>
       <Navbar />
-      <Hero />
-      <About />
+      <main>\n        <Hero />\n        <About />
       <Services />
       <Gallery />
       <Skills />
@@ -32,8 +44,7 @@ export default function Home() {
       <Profiles />
       <Testimonials />
       <FAQ />
-      <Contact />
-      <Footer />
+        <Contact />\n      </main>\n      <Footer />
     </div>
   );
 }
