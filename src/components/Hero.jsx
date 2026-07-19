@@ -6,7 +6,7 @@ export default function Hero() {
   const { t } = useTranslation();
 
   return (
-    <section id="home" className="relative min-h-[92vh] flex items-center overflow-hidden pt-10">
+    <section id="home" className="hero-stage relative min-h-[92vh] flex items-center overflow-hidden pt-10">\n      <div className="hero-grid" aria-hidden="true" />\n      <div className="hero-orb hero-orb-one" aria-hidden="true" />\n      <div className="hero-orb hero-orb-two" aria-hidden="true" />\n      <div className="hero-scan" aria-hidden="true" />
       <CircuitBackground className="absolute -top-10 -end-20 w-[560px] h-[380px] hidden md:block" opacity={0.4} />
       <CircuitBackground className="absolute -bottom-16 -start-24 w-[520px] h-[360px] hidden md:block rotate-12" opacity={0.25} />
       <div
@@ -14,23 +14,23 @@ export default function Hero() {
         style={{ background: "radial-gradient(60% 50% at 50% 20%, color-mix(in srgb, var(--site-accent) 8%, transparent), transparent)" }}
       />
 
-      <div className="relative max-w-5xl mx-auto px-6 text-center fade-up">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border site-border mb-8 site-bg-elevated">
+      <div className="relative max-w-5xl mx-auto px-6 text-center hero-content">
+        <div className="hero-reveal hero-delay-1 inline-flex items-center gap-2 px-4 py-2 rounded-full border site-border mb-8 site-bg-elevated">
           <Zap className="w-3.5 h-3.5 site-accent" />
           <span className="eyebrow">{t("hero.badge")}</span>
         </div>
 
-        <h1 className="font-display font-bold text-5xl md:text-7xl mb-4 tracking-tight">
+        <h1 className="hero-reveal hero-delay-2 hero-title font-display font-bold text-5xl md:text-7xl mb-4 tracking-tight">
           {t("hero.name")}
         </h1>
-        <p className="font-display font-semibold text-2xl md:text-4xl mb-6" style={{ background: "linear-gradient(90deg, var(--site-accent), var(--site-accent-2))", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>
+        <p className="hero-reveal hero-delay-3 font-display font-semibold text-2xl md:text-4xl mb-6 animated-gradient" style={{ background: "linear-gradient(90deg, var(--site-accent), var(--site-accent-2))", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>
           {t("hero.role")}
         </p>
-        <p className="max-w-2xl mx-auto text-base md:text-lg mb-10" style={{ color: "var(--site-text-muted)" }}>
+        <p className="hero-reveal hero-delay-4 max-w-2xl mx-auto text-base md:text-lg mb-10" style={{ color: "var(--site-text-muted)" }}>
           {t("hero.desc")}
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+        <div className="hero-reveal hero-delay-5 flex flex-wrap items-center justify-center gap-3 mb-10">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border site-border font-mono text-xs site-bg-elevated">
             <Cpu className="w-3.5 h-3.5 site-accent" /> {t("hero.tag1")}
           </span>
@@ -42,7 +42,7 @@ export default function Hero() {
           </span>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-4">
+        <div className="hero-reveal hero-delay-6 flex flex-wrap items-center justify-center gap-4">
           <a href="#projects" className="btn-primary px-8 py-3.5 text-sm">{t("hero.cta1")}</a>
           <a href="#contact" className="btn-ghost px-8 py-3.5 text-sm">{t("hero.cta2")}</a>
         </div>
