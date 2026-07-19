@@ -35,7 +35,9 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <main>\n        <Hero />\n        <About />
+      <main>
+        <Hero />
+        <About />
       <Services />
       <Gallery />
       <Skills />
@@ -44,7 +46,9 @@ export default function Home() {
       <Profiles />
       <Testimonials />
       <FAQ />
-        <Contact />\n      </main>\n      <Footer />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
