@@ -8,6 +8,8 @@ export default function Gallery() {
   const filters = t("gallery.filters", { returnObjects: true }) || [];
   const items = t("gallery.items", { returnObjects: true }) || [];
   const [active, setActive] = useState(0);
+  const categoryIndexes = [items.map((_, index) => index), [0], [4], [2], [1, 3, 5]];
+  const visibleItems = (categoryIndexes[active] || categoryIndexes[0]).map((index) => items[index]).filter(Boolean);
 
   return (
     <section id="gallery" className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32">
@@ -31,8 +33,8 @@ export default function Gallery() {
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {items.map((item, i) => (
-          <div key={i} className="card overflow-hidden group cursor-pointer fade-up">
+        {visibleItems.map((item, i) => (
+          <article key={`${active}-${i}`} className="card overflow-hidden group fade-up">
             <div
               className="aspect-[4/3] relative flex items-end p-5"
               style={{
@@ -42,7 +44,7 @@ export default function Gallery() {
               <ScanLine className="absolute top-4 end-4 w-5 h-5 opacity-40 site-accent" />
               <span className="font-medium text-sm relative z-10">{item.title}</span>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>
