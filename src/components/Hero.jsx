@@ -43,7 +43,7 @@ export default function Hero() {
         </div>
 
         <div className="hero-reveal hero-delay-6 flex flex-wrap items-center justify-center gap-4">
-          <a href="#projects" className="btn-primary px-8 py-3.5 text-sm">{t("hero.cta1")}</a>
+          <a href="#gallery" className="btn-primary px-8 py-3.5 text-sm">{t("hero.cta1")}</a>
           <a href="#contact" className="btn-ghost px-8 py-3.5 text-sm">{t("hero.cta2")}</a>
         </div>
 
