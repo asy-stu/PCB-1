@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { getTheme, saveTheme, applyThemeToDOM, resetTheme as resetThemeStore } from "../lib/themeStore";
+import { getTheme, getColorMode, MODE_KEY, saveTheme, applyThemeToDOM, resetTheme as resetThemeStore } from "../lib/themeStore";
 import { applyAllOverridesToI18n } from "../lib/contentStore";
 import { recordLangUsage } from "../lib/statsStore";
 import { RTL_LANGS } from "../i18n";
@@ -10,10 +10,11 @@ const SiteContext = createContext(null);
 export function SiteProvider({ children }) {
   const { i18n } = useTranslation();
   const [theme, setThemeState] = useState(getTheme());
+  const [colorMode, setColorMode] = useState(getColorMode);
 
   useEffect(() => {
     applyAllOverridesToI18n();
-    applyThemeToDOM(theme);
+    applyThemeToDOM(theme, colorMode);
   }, []);
 
   useEffect(() => {
@@ -28,21 +29,26 @@ export function SiteProvider({ children }) {
     const next = { ...theme, ...updates };
     setThemeState(next);
     saveTheme(next);
-    applyThemeToDOM(next);
+    applyThemeToDOM(next, colorMode);
   };
 
   const resetTheme = () => {
     const next = resetThemeStore();
     setThemeState(next);
-    applyThemeToDOM(next);
+    applyThemeToDOM(next, colorMode);
   };
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
+  const toggleColorMode = () => {
+    const next = colorMode === "dark" ? "light" : "dark";
+    setColorMode(next);
+    localStorage.setItem(MODE_KEY, next);
+    applyThemeToDOM(theme, next);
   };
+
+  const changeLanguage = (lng) => i18n.changeLanguage(lng);
 
   return (
-    <SiteContext.Provider value={{ theme, setTheme, resetTheme, changeLanguage, lang: i18n.language }}>
+    <SiteContext.Provider value={{ theme, setTheme, resetTheme, colorMode, toggleColorMode, changeLanguage, lang: i18n.language }}>
       {children}
     </SiteContext.Provider>
   );
