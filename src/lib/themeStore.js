@@ -24,7 +24,18 @@ export const DEFAULT_THEME = {
   radius: 14,
 };
 
+export const LIGHT_THEME = {
+  accent: "#087f5b",
+  accent2: "#0969a9",
+  bg: "#f4f8f7",
+  bgElevated: "#ffffff",
+  border: "#d7e2df",
+  text: "#101c1a",
+  textMuted: "#526560",
+};
+
 const STORAGE_KEY = "site_theme";
+export const MODE_KEY = "site_color_mode";
 let loadedFonts = new Set();
 
 export function getTheme() {
@@ -35,6 +46,12 @@ export function getTheme() {
   } catch {
     return { ...DEFAULT_THEME };
   }
+}
+
+export function getColorMode() {
+  const saved = localStorage.getItem(MODE_KEY);
+  if (saved === "light" || saved === "dark") return saved;
+  return window.matchMedia?.("(prefers-color-scheme: light)").matches ? "light" : "dark";
 }
 
 export function saveTheme(theme) {
@@ -56,22 +73,25 @@ function loadGoogleFont(fontId) {
   loadedFonts.add(fontId);
 }
 
-export function applyThemeToDOM(theme) {
+export function applyThemeToDOM(theme, mode = getColorMode()) {
   const root = document.documentElement;
-  root.style.setProperty("--site-accent", theme.accent);
-  root.style.setProperty("--site-accent-2", theme.accent2);
-  root.style.setProperty("--site-bg", theme.bg);
-  root.style.setProperty("--site-bg-elevated", theme.bgElevated);
-  root.style.setProperty("--site-border", theme.border);
-  root.style.setProperty("--site-text", theme.text);
-  root.style.setProperty("--site-text-muted", theme.textMuted);
+  const colors = mode === "light" ? { ...theme, ...LIGHT_THEME } : theme;
+  root.dataset.theme = mode;
+  root.style.colorScheme = mode;
+  root.style.setProperty("--site-accent", colors.accent);
+  root.style.setProperty("--site-accent-2", colors.accent2);
+  root.style.setProperty("--site-bg", colors.bg);
+  root.style.setProperty("--site-bg-elevated", colors.bgElevated);
+  root.style.setProperty("--site-border", colors.border);
+  root.style.setProperty("--site-text", colors.text);
+  root.style.setProperty("--site-text-muted", colors.textMuted);
   root.style.setProperty("--site-radius", `${theme.radius}px`);
 
   [theme.fontDisplay, theme.fontBody, theme.fontMono].forEach(loadGoogleFont);
   const displayOpt = FONT_OPTIONS.find((f) => f.id === theme.fontDisplay);
   const bodyOpt = FONT_OPTIONS.find((f) => f.id === theme.fontBody);
   const monoOpt = FONT_OPTIONS.find((f) => f.id === theme.fontMono);
-  root.style.setProperty("--site-font-display", displayOpt?.css || DEFAULT_THEME.fontDisplay);
-  root.style.setProperty("--site-font-body", bodyOpt?.css || DEFAULT_THEME.fontBody);
-  root.style.setProperty("--site-font-mono", monoOpt?.css || DEFAULT_THEME.fontMono);
+  root.style.setProperty("--site-font-display", displayOpt?.css || "'Space Grotesk', sans-serif");
+  root.style.setProperty("--site-font-body", bodyOpt?.css || "'Inter', sans-serif");
+  root.style.setProperty("--site-font-mono", monoOpt?.css || "'JetBrains Mono', monospace");
 }
