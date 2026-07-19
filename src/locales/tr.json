@@ -1,0 +1,172 @@
+{
+  "meta": { "siteName": "Ahmed Saad", "tagline": "PCB Tasarımı" },
+  "nav": {
+    "home": "Anasayfa", "about": "Hakkımda", "services": "Hizmetler", "projects": "Projeler",
+    "gallery": "Galeri", "skills": "Yetenekler", "process": "Süreç", "profiles": "Profiller",
+    "contact": "İletişim", "talk": "Görüşelim"
+  },
+  "hero": {
+    "badge": "Sertifikalı PCB Üretim Standartları",
+    "name": "Ahmed Saad",
+    "role": "PCB Tasarım Mühendisi | Elektronik Donanım Tasarımcısı",
+    "desc": "Prototipler, gömülü sistemler ve özel donanım projeleri için güvenilir elektronik devreler ve profesyonel PCB düzenleri tasarlıyorum.",
+    "tag1": "ESP32 / Arduino", "tag2": "1-4 Katman Tasarım", "tag3": "Şematik & LTspice",
+    "cta1": "Projelerimi Gör", "cta2": "Ahmed ile İletişime Geç"
+  },
+  "about": {
+    "eyebrow": "01 . PROFİL", "title": "Hakkımda",
+    "headline": "Güvenilir fiziksel üretime odaklanan gelecek vadeden bir donanım tasarımcısı.",
+    "body": "Elektronik, devre tasarımı, gömülü sistemler ve donanım geliştirmeye güçlü ilgi duyan bir Elektrik Mühendisliği öğrencisi ve gelecek vadeden bir PCB Tasarım Mühendisiyim. Yoğun uygulamalı laboratuvar çalışmaları ve endüstri standardı simülasyon çalışmaları yoluyla teknik ve pratik becerilerimi sürekli geliştirirken, organize, üretilebilir ve güvenilir PCB tasarımları oluşturmaya odaklanıyorum.",
+    "cv": "Yazdırılabilir Özgeçmiş Oluştur (PDF)",
+    "stats": [
+      { "value": "15+", "label": "Tamamlanan Kart" },
+      { "value": "4K", "label": "Katman Kapasitesi" },
+      { "value": "200+", "label": "Tedarik Edilen Bileşen" },
+      { "value": "%99", "label": "DRC Geçiş Oranı" }
+    ],
+    "timelineTitle": "Öğrenim ve Eğitim Zaman Çizelgesi",
+    "timeline": [
+      { "year": "2023 - Devam Ediyor", "title": "Elektrik Mühendisliği Lisans", "place": "Bartın Üniversitesi", "desc": "Elektronik, Sinyaller & Sistemler, Güç Sistemleri ve Gömülü mikrodenetleyicilere odaklanma. Robotik ve donanım kulüplerinde aktif katılım." },
+      { "year": "2024", "title": "İleri Seviye PCB Tasarım Kursu", "place": "Online Donanım Akademisi", "desc": "Yüksek hızlı PCB yönlendirme kuralları, sinyal bütünlüğü, güç dağıtım ağları (PDN), termal yönetim ve üretime yönelik tasarım (DFM) üzerine çalışma." },
+      { "year": "2025", "title": "Gömülü Donanım Bootcamp", "place": "Gömülü Sistemler Teknik Enstitüsü", "desc": "Şematik yakalama, footprint oluşturma, Altium ve KiCad kullanarak çift ve çok katmanlı kartları yönlendirme konusunda uygulamalı deneyim." }
+    ]
+  },
+  "services": {
+    "eyebrow": "02 . HİZMETLER", "title": "Profesyonel Hizmetler", "requestBtn": "Bu Hizmeti Talep Et",
+    "items": [
+      { "title": "Şematik Devre Tasarımı", "desc": "Teknik fikirleri, uygun gürültü filtrelemesi ve elektriksel kurallarla yapılandırılmış ve simüle edilmiş devre şemalarına dönüştürme.", "points": ["Detaylı kütüphane oluşturma", "LTspice ile devre simülasyonları", "Güç ve sinyal bütünlüğü planlaması"] },
+      { "title": "PCB Yerleşim Tasarımı", "desc": "Optimum empedans eşleştirme ve gürültü minimizasyonu ile elektronik parçaların profesyonel yerleştirilmesi ve iz yönlendirmesi.", "points": ["Özel bileşen yerleşimi", "Empedans eşleştirmeli yönlendirme", "Toprak düzlemi izolasyonu"] },
+      { "title": "Tek ve Çok Katmanlı PCB Tasarımı", "desc": "Kompakt aralık, sinyal karışması önleme ve sağlam güç düzlemlerine odaklanan 4 katmana kadar yerleşim çözümleri.", "points": ["2 ve 4 katmanlı istifleme", "Via optimizasyonu (delikli, kör)", "Yüksek hızlı iz kısıtlamaları"] },
+      { "title": "Bileşen Seçimi", "desc": "Tedarik zinciri tükenmesini veya kullanımdan kaldırılmış parçaları önleyerek yüksek verimli, uygun maliyetli ve kolay bulunabilir bileşenlerin seçilmesi.", "points": ["Alternatif parça karşılaştırma", "Maliyet ve bulunabilirlik dengesi", "Yaşam döngüsü riski taraması"] },
+      { "title": "PCB Yönlendirme ve Optimizasyon", "desc": "Sıkı akım yoğunluğu limitleriyle yönlendirme, termal sıcak noktaları önleme ve yüksek frekanslı emisyon hatlarını azaltma.", "points": ["Akım yoğunluğu hesaplamaları", "Termal rahatlatma planlaması", "EMI azaltma stratejileri"] },
+      { "title": "Tasarım Kuralı Kontrolü (DRC)", "desc": "%100 üretim verimi garantilemek için üretici sınırlamalarına karşı titiz fiziksel tasarım kuralı kontrolleri.", "points": ["Üretici kural eşleştirmesi", "Boşluk ve halka kontrolleri", "Nihai onay raporlaması"] }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "04 . GRAFİK GALERİSİ", "title": "Proje Görsel Galerisi",
+    "filters": ["Tüm Varlıklar", "Bakır Yerleşimler", "Devre Şemaları", "3D CAD Görselleri", "Laboratuvar Tanıları"],
+    "items": [
+      { "title": "Çok Katmanlı Bakır İz Makro Görünümü" },
+      { "title": "Robotik Laboratuvarı Kalibrasyon Oturumu" },
+      { "title": "Sıvı Soğutmalı Sistem Kurulumu" },
+      { "title": "Lehim Pastası Rakle Testi" },
+      { "title": "Güç Kaynağı Tezgah Montajı" },
+      { "title": "Mobil Tanılama Kontrolü" }
+    ]
+  },
+  "skills": {
+    "eyebrow": "05 . YETKİNLİKLER", "title": "Yetenekler ve Uzmanlıklar",
+    "rings": [
+      { "value": 92, "label": "PCB Yerleşim Tasarımı" },
+      { "value": 95, "label": "Şematik Yakalama" },
+      { "value": 90, "label": "Devre Simülasyonu" },
+      { "value": 95, "label": "Teknik Dokümantasyon" }
+    ],
+    "groups": [
+      { "title": "Donanım Tasarımı", "items": [
+        { "label": "PCB Tasarım & Yerleşim", "value": 92 },
+        { "label": "Şematik Yakalama", "value": 95 },
+        { "label": "Devre Tasarımı & Analizi", "value": 88 },
+        { "label": "Üretime Yönelik Tasarım (DFM)", "value": 85 },
+        { "label": "Yüksek Hızlı Yönlendirme Limitleri", "value": 78 },
+        { "label": "Gömülü Sistem Geliştirme", "value": 82 },
+        { "label": "Dijital Sinyal Ayrıştırma", "value": 85 }
+      ]},
+      { "title": "Simülasyon & Yazılım", "items": [
+        { "label": "LTspice Devre Simülasyonu", "value": 90 },
+        { "label": "KiCad Pro Paketi", "value": 94 },
+        { "label": "Altium Designer Paketi", "value": 80 },
+        { "label": "C/C++ (Arduino & ESP32)", "value": 84 }
+      ]},
+      { "title": "Akademik Temeller", "items": [
+        { "label": "Donanım Arıza Giderme", "value": 86 },
+        { "label": "Analog Elektronik Temelleri", "value": 90 },
+        { "label": "Teknik Dokümantasyon (BOM/Gerber)", "value": 95 }
+      ]}
+    ]
+  },
+  "software": {
+    "eyebrow": "06 . DONANIM PAKETLERİ", "title": "Yazılım Araçları & Uygulamalar",
+    "edaTitle": "Elektronik Tasarım Otomasyonu (EDA)",
+    "simTitle": "Simülatörler & Sinyal Analizörleri",
+    "eda": [
+      { "name": "KiCad EDA", "level": "İleri Seviye (2+ Yıl)", "score": "%95", "desc": "Tam şematik yakalama, kütüphane oluşturma ve çok katmanlı yerleşim yönlendirmesi için ana tasarım aracı." },
+      { "name": "Altium Designer", "level": "Orta Seviye", "score": "%80", "desc": "Endüstriyel projeler, empedans kontrol hesaplaması ve interaktif 3D kart doğrulaması." },
+      { "name": "EasyEDA", "level": "Uzman", "score": "%95", "desc": "Hızlı müşteri prototipleme, LCSC parça kataloğu ve JLCPCB üretimiyle doğrudan entegrasyon." }
+    ],
+    "sim": [
+      { "name": "LTspice", "level": "İleri Seviye", "score": "%90", "desc": "Yerleşime geçmeden önce analog devre simülasyonları, geçici tepki kontrolleri, gürültü değerlendirmesi." },
+      { "name": "Proteus", "level": "Orta Seviye", "score": "%85", "desc": "İnteraktif dijital devre simülasyonu ve mikrodenetleyici register kodu doğrulaması." }
+    ]
+  },
+  "process": {
+    "eyebrow": "07 . ÇALIŞMA METODOLOJİSİ", "title": "Proje Yürütme Sürecim",
+    "steps": [
+      { "title": "Gereksinimleri Anlama", "desc": "Müşteriyle temel teknik özellikleri tartışma: voltaj, giriş/çıkış sinyalleri, boyutsal sınırlar ve mekanik boşluklar." },
+      { "title": "Devre Planlaması", "desc": "Güç kademelerini, sinyal yollarını, MCU bölgelerini ve koruma devrelerini izole etmek için üst düzey blok diyagramları oluşturma." },
+      { "title": "Şematik Yakalama", "desc": "Doğrulanmış bileşen sembolleri, net etiketleri ve simülasyona hazır bağlantılarla tam elektrik şemasını oluşturma." },
+      { "title": "Bileşen Tedariki", "desc": "Yaşam döngüsü riski ve footprint doğruluğunu tarayarak uygun, maliyet etkin parçalar seçme." },
+      { "title": "PCB Yerleşim & Yönlendirme", "desc": "Kontrollü empedans ve termal hususlarla bileşenleri yerleştirme ve bakır izleri yönlendirme." },
+      { "title": "Tasarım İncelemesi (DRC)", "desc": "Sıfır çakışma, yeterli boşluklar ve doğru maske eşiklerini onaylamak için tam endüstriyel Tasarım Kuralı Kontrolleri çalıştırma." },
+      { "title": "Üretim Dosyalarını Oluşturma", "desc": "Standart Gerber X2 formatları, Excellon delme dosyaları, Malzeme Listesi (BOM) tabloları ve yerleştirme koordinat verilerini dışa aktarma." },
+      { "title": "Nihai Teslimat & Destek", "desc": "Tam sıkıştırılmış üretim arşivlerini teslim etme, profesyonel montaj desteği sağlama ve test prosedürlerini açıklama." }
+    ]
+  },
+  "profiles": {
+    "eyebrow": "08 . KANALLAR & PROFİLLER", "title": "Benimle İletişime Geçin",
+    "filters": ["Tüm Kanallar", "Serbest Çalışma Platformları", "Profesyonel Ağlar", "Doğrudan İletişim"],
+    "open": "Kanalı Aç",
+    "items": [
+      { "name": "LinkedIn", "tag": "PROFESYONEL", "desc": "Profesyonel ağ kurma ve detaylı çalışma zaman çizelgesi." },
+      { "name": "GitHub", "tag": "AÇIK KAYNAK", "desc": "Açık kaynak elektronik tasarım depoları ve firmware kodu." },
+      { "name": "Upwork", "tag": "SERBEST ÇALIŞMA", "desc": "Profesyonel özel donanım tasarım işleri için beni işe alın." },
+      { "name": "Fiverr", "tag": "HIZLI İŞLER", "desc": "Hızlı PCB yerleşimleri ve tasarım inceleme hizmetleri." },
+      { "name": "Khamsat", "tag": "عربي", "desc": "Arap geliştiriciler ve hobiciler için mikro danışmanlık." },
+      { "name": "E-posta", "tag": "DOĞRUDAN İLETİŞİM", "desc": "Proje soruları ve resmi teklif talepleri için doğrudan kanal." },
+      { "name": "WhatsApp", "tag": "ANLIK SOHBET", "desc": "Devre kartlarınız hakkında hızlı geri bildirim için anlık mesajlaşma." },
+      { "name": "Telegram", "tag": "ANLIK SOHBET", "desc": "Teknik sohbet ve paylaşılan proje dosyaları." }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "09 . MÜŞTERİ GÖRÜŞLERİ", "title": "Müşteriler Ne Diyor", "demo": "DEMO ÖRNEKLERİ",
+    "items": [
+      { "text": "Ahmed, laboratuvarımız için son derece güvenilir çok kanallı bir sensör merkezi tasarladı. Toprak düzlemi segmentasyonu, ADC okumalarımızdaki yüksek frekanslı gürültüyü başarıyla temizledi. Harika iletişim ve DRC kurallarımıza sıkı bağlılık.", "name": "Dr. Khaled Al-Mansoor", "role": "Gömülü Sistemler Profesörü @ Akademik Laboratuvar", "project": "ARAŞTIRMA SENSÖR DİZİSİ PCB", "date": "2025-11-12" },
+      { "text": "Olağanüstü sonuçlar. Ahmed'in sağladığı Gerber dosyaları üretici portalına sıfır tasarım istisnasıyla kusursuzca yüklendi. Doğrudan montaj maliyetlerinde %15 tasarruf sağlayan standart, uygun maliyetli parçalar seçmemize yardımcı oldu.", "name": "Omar Al-Farsi", "role": "Donanım Girişimi Kurucusu @ SmartVibe Technologies", "project": "ESP32 KONTROLÖR KALKANI V2", "date": "2026-02-05" },
+      { "text": "Mükemmel termal yerleşim! 8A'lık sürekli ağır yükler altında bile ısı, simülasyon çalışmalarında öngörüldüğü gibi vialar ve bakır dolgular arasında iyi dağılmış durumda kalıyor. Gerçekten güvenilir bir PCB tasarımcısı.", "name": "Sarah Connor", "role": "Robotik Baş Geliştiricisi @ Nexus Automation", "project": "ÇİFT H-KÖPRÜ MOTOR SÜRÜCÜSÜ", "date": "2026-05-20" }
+    ]
+  },
+  "faq": {
+    "eyebrow": "10 . BİLGİ MERKEZİ", "title": "Sıkça Sorulan Sorular",
+    "items": [
+      { "q": "Bir PCB projesine başlamak için hangi bilgilere ihtiyacınız var?", "a": "Şemanıza veya devrenin işlevinin net bir açıklamasına, hedef voltaj/akıma, kart boyutu kısıtlamalarına ve istenen katman sayısına ihtiyacım var. Ana bileşenler için taslaklar, referans tasarımlar veya veri sayfaları da çok yardımcı olur." },
+      { "q": "Hangi PCB tasarım yazılımını kullanıyorsunuz?", "a": "Ağırlıklı olarak tam tasarımlar için KiCad, endüstriyel düzeyde empedans kontrollü projeler için Altium Designer ve JLCPCB entegrasyonlu hızlı prototipleme için EasyEDA kullanıyorum." },
+      { "q": "Gerber dosyaları sağlıyor musunuz?", "a": "Evet. Tamamlanan her proje, üretime hazır standart Gerber X2 dosyalarını, Excellon delme dosyalarını, Malzeme Listesini (BOM) ve yerleştirme koordinatlarını içerir." },
+      { "q": "Mevcut bir PCB tasarımını inceleyebilir misiniz?", "a": "Kesinlikle. DRC uyumluluğu, termal analiz, sinyal bütünlüğü ve üretilebilirlik iyileştirmelerini kapsayan tasarım inceleme hizmetleri sunuyorum." },
+      { "q": "Çok katmanlı PCB'ler tasarlıyor musunuz?", "a": "Evet, yüksek hızlı sinyaller için kontrollü empedans yönlendirmesi, uygun toprak düzlemi izolasyonu ve via optimizasyonu ile 2 katmanlı ve 4 katmanlı kartlar tasarlıyorum." },
+      { "q": "Kaynak dosyalarını sağlıyor musunuz?", "a": "Evet, tasarımınızın tam mülkiyetini ve düzenlenebilirliğini korumanız için her teslimatta orijinal KiCad/Altium proje dosyaları dahildir." }
+    ]
+  },
+  "contact": {
+    "eyebrow": "11 . TEKLİF TALEBİ", "title": "Proje Teklifi İste",
+    "subtitle": "Güvenilir kartları birlikte inşa edelim",
+    "desc": "Aklınızda özel bir PCB tasarımı, şematik diyagram veya donanım hata ayıklama sorunu mu var? Detaylı özelliklerinizi, hedef kısıtlamalarınızı veya taslaklarınızı gönderin, 24 saatten kısa sürede kapsamlı bir teknik teklifle size geri döneceğim.",
+    "emailLabel": "E-POSTA KANALI", "phoneLabel": "WHATSAPP / MOBİL", "locationLabel": "KONUM SINIRLARI",
+    "emailValue": "ahmedsaad@example.com", "phoneValue": "+90 500 000 00 00",
+    "locationValue": "Uzaktan Tedarik / Dünya Çapında Nakliye için Uygun",
+    "form": {
+      "name": "Ad Soyad", "email": "E-posta Adresi", "phone": "Telefon Numarası", "company": "Şirket / Kurum",
+      "type": "Proje Türü", "budget": "Tahmini Bütçe", "deadline": "Gerekli Teslim Tarihi",
+      "details": "Proje Detayları / Özellikleri", "detailsPh": "Kart yapınızı, girişlerinizi ve fiziksel kısıtlamalarınızı açıklayın...",
+      "attach": "Şematik Taslağı / CAD Dosyası Ekle (opsiyonel)", "drop": "Dosyaları buraya sürükleyip bırakın veya göz atmak için tıklayın",
+      "supports": ".ZIP, .PDF, .PNG, .JPG, .KiCad_pcb, .KiCad_sch destekler (Maks 15MB)",
+      "select": "-- Seçiniz --", "flexible": "Esnek", "send": "Proje Talebini Gönder"
+    }
+  },
+  "footer": {
+    "desc": "PCB Tasarım Mühendisi | Elektronik Donanım Tasarımcısı — Optimum empedans eşleştirme, sinyal izolasyonu ve güvenilir üretim uyumluluğu ile fiziksel devre katmanları tasarlama.",
+    "drc": "Tasarım Kuralı Kontrolü (DRC) Geçildi",
+    "navTitle": "Hızlı Gezinme", "accessTitle": "Küresel Doğrudan Erişim",
+    "accessDesc": "Uzaktan serbest çalışma projelerine veya tam zamanlı junior PCB pozisyonlarına hazır.",
+    "rights": "Tüm PCB izleri hassasiyetle yönlendirildi.", "backTop": "Başa Dön"
+  }
+}
