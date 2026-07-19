@@ -107,7 +107,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden site-bg-elevated border-t site-border px-5 py-4 flex flex-col gap-1 font-mono text-sm">
+        <div className="mobile-menu lg:hidden site-bg-elevated border-t site-border px-5 py-4 flex flex-col gap-1 font-mono text-sm">
           {LINKS.map((l) => (
             <a key={l.id} href={l.href} onClick={() => setOpen(false)} className="py-2.5" style={{ color: "var(--site-text-muted)" }}>
               {t(`nav.${l.id}`)}
